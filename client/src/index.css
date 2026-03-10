@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ef4444;
+  --color-brand-secondary: #a855f7;
+  --color-brand-blue: #1e40af;
+  --color-brand-purple: #6b21a8;
+  --color-brand-orange: #ea580c;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 bg-white;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
